@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TS</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+	h1{
+		font-family: 'Mate SC', serif;
+		text-align:center;
+	}
+		.forms{
+			background: yellow;
+			width: 400px;
+			height: auto;
+			text-align: center;
+			margin: auto;
+  			width: 50%;
+			padding: 30px;
+			font-family: 'Mate SC', serif;
+			border-radius: 25px;
+		}
+		input[type=text],input[type=email],input[type=date], select {
+  
+  padding: 5px 5px;
+  margin: 8px 0;
+  font-family: 'Mate SC', serif;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.myBtn {
+  width: 30%;
+  background-color: #0adb11;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+#teacherTable,#studentTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin: auto;
+}
+
+#teacherTable td,#studentTable td, #teacherTable th,#studentTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#teacherTable tr,#studentTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#teacherTable tr,#studentTable tr:hover {background-color: #ddd;}
+
+#teacherTable th,#studentTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+	</style>
+	<script>
+		function myFunction() {
+			
+			var b = document.getElementById("teacher-div");
+			var d = document.getElementById("teacher");
+
+			var c = document.getElementById("student-div");
+			var e = document.getElementById("student");
+			console.log(d);
+			b.style.display = d.checked ? "block" : "none";
+			c.style.display = e.checked ? "block" : "none";
+			
+			}
+
+	</script>
+	<script type="text/javascript" src="test.js" defer></script>
+</head>
+
+<body>
+	<div class="row">
+		
+	<div class="col-sm">	
+		<div class="forms">
+			
+			<h1>FORM</h1>
+			<input type="text" name="name" id="name" placeholder="Enter your name"><br><br>
+			<input type="text" name="phone" id="phone" placeholder="Enter your contact"><br><br>
+			Enter your DOB:<input type="date" name="dob" id="dob"><br><br>		
+			Teacher:<input type="radio" name="role" id="teacher" value="teacher" onclick="myFunction()"><br><br>
+			Student:<input type="radio" name="role" id="student" value="stduent" onclick="myFunction()"><br><br>
+			<div class="forms" id="teacher-div" style="display: none;">
+				<input type="text" name="teacher_id" id="teacher_id" placeholder="Enter your Teacher ID"><br><br>
+				<input type="email" name="email" id="email" placeholder="Enter your email"><br><br>
+				<input type="text" name="subject" id="subject" placeholder="Enter your subject"><br><br>
+			</div>
+			<div class="forms" id="student-div" style="display: none;">
+			Enter your Class:<input type="text" name="clas" id="clas"><br><br>
+			</div>
+			<button class="myBtn" id="myBtn">Submit</button>
+			
+		</div>
+	</div>
+	<div class="col-sm" id="studentTableDiv" style="display: none;">
+		<h1>STUDENT RECORDS</h1>
+		<table id="studentTable">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>Class</th>
+			<th>Contact</th>
+			<th>DOB</th>
+			</tr>
+		</thead>
+
+		</table>
+	</div>
+	<div class="col-sm" id="teacherTableDiv" style="display: none;">
+		
+		<table id="teacherTable">
+			<h1>TEACHERS RECORDS</h1>
+			<thead>
+			<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Contact</th>
+			<th>Email</th>
+			<th>DOB</th>
+			<th>Subject</th>
+			</tr>
+		</thead>
+
+		</table>
+	</div>
+<footer style="padding-bottom:50px;">
+
+</footer>
+</body>
+</html>
